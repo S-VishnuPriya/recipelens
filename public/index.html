@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Recipe Finder 🍳</title>
+<title>Recipe Lens🍳</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -244,7 +244,7 @@ main{max-width:1200px;margin:0 auto;padding:2rem 1.5rem}
 <body>
 <!-- ── NAV ── -->
 <nav>
-  <div class="logo" onclick="goHome()">🍳 Recipe Finder</div>
+  <div class="logo" onclick="goHome()">🍳 Recipe Lens</div>
 
   <div class="nav-mid" id="nav-search-wrap" style="display:none">
     <div class="nav-search">
@@ -552,7 +552,7 @@ function showEr(m) {
 function renderG(meals,q) {
   const ra=document.getElementById('ra');
   if(!meals.length){
-    ra.innerHTML='<div class="es"><span class="be">🤔</span><h3>No results for "'+q+'"</h3><p>Try a different spelling or a related dish name. Spoonacular has millions of recipes.</p><p style="margin-top:.5rem">Try: <strong>Butter Chicken</strong>, <strong>Pasta Carbonara</strong>, <strong>Biryani</strong>, <strong>Shakshuka</strong>, <strong>Pad Thai</strong></p></div>';
+    ra.innerHTML='<div class="es"><span class="be">🤔</span><h3>No results for "'+q+'"</h3><p>Try a different spelling or a related dish name. Spoonacular has thousands of recipes.</p><p style="margin-top:.5rem">Try: <strong>Butter Chicken</strong>, <strong>Pasta Carbonara</strong>, <strong>Biryani</strong>, <strong>Shakshuka</strong>, <strong>Pad Thai</strong></p></div>';
     return;
   }
 
