@@ -10,14 +10,14 @@ const PORT = process.env.PORT || 3000;
 // Each key gives ~150 points/day free = ~75 searches each
 // Together you get ~150 searches/day total
 const SP_KEYS = [
-  process.env.SPOONACULAR_KEY  || 'c7a32393cff74928ac71073b12e06d7d',
-  process.env.SPOONACULAR_KEY2 || '95deafbbc9d94dbf968102dcb18dfaf5'
+  process.env.SPOONACULAR_KEY   ,
+  process.env.SPOONACULAR_KEY2 
 ];
 let spKeyIndex = 0; // tracks which key we're currently using
 
 // TheMealDB — free, no key needed, used as fallback when Spoonacular is exhausted
 const MEAL_URL = 'https://www.themealdb.com/api/json/v1/1';
-const YT_KEY   = process.env.YT_KEY || 'AIzaSyCBoBs2RwJfezcTC-Gj6NE6ULIOnXKgE6I';
+const YT_KEY   = process.env.YT_KEY ;
 const SP_URL   = 'https://api.spoonacular.com';
 const YT_URL   = 'https://www.googleapis.com/youtube/v3';
 
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ── HELPER: fetch a URL and return parsed JSON ────────────────
 function fetchJSON(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, { headers: { 'User-Agent': 'RecipeFinder/1.0' } }, res => {
+    https.get(url, { headers: { 'User-Agent': 'RecipeLens/1.0' } }, res => {
       let data = '';
       res.on('data', c => data += c);
       res.on('end', () => {
@@ -329,7 +329,7 @@ function fmtViews(n) {
 }
 
 app.listen(PORT, () => {
-  console.log(`\n✅ Recipe Finder → http://localhost:${PORT}`);
+  console.log(`\n✅ Recipe Lens → http://localhost:${PORT}`);
   console.log(`   Spoonacular keys loaded: ${SP_KEYS.length}`);
   console.log(`   Estimated searches/day: ~${SP_KEYS.length * 75} (${SP_KEYS.length} keys × ~75 each)`);
   console.log(`   TheMealDB fallback: always available (no key needed)\n`);
